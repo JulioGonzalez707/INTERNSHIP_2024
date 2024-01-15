@@ -26,9 +26,11 @@
 
 int main(void)
 {
-    RCC		->	AHB1ENR	|=	RCC_AHB1ENR_GPIODEN;
-    GPIOD	->	MODER	|=	GPIO_MODER_MODE12_0;
-    GPIOD	->	ODR		|=	GPIO_ODR_OD12;
+    // Setting Port D to turn on a LED
+
+    RCC		->	AHB1ENR	|=	RCC_AHB1ENR_GPIODEN;		//	Setting RCC_AHB1 bus port D
+    GPIOD	->	MODER	|=	GPIO_MODER_MODE12_0;		//	Setting GPIO port D mode
+    GPIOD	->	ODR		|=	GPIO_ODR_OD12;		//	Setting GPIO port D output data
 
 	/* Loop forever */
 	for(;;);
