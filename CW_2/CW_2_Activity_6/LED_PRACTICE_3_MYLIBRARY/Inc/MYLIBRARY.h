@@ -8,16 +8,29 @@
 #ifndef MYLIBRARY_H_
 #define MYLIBRARY_H_
 
-#define 	INPUT_MODE 		0UL
-#define 	OUTPUT_MODE		1UL
-#define 	ALTERNATE_MODE	2UL
-#define 	ANALOG_MODE		3UL
-#define 	TURNING_ON		1UL
-#define		TRUNING_OFF  	0UL
-#define		RCC_AHB1ENR		0x40023830UL;
-#define		GPIOs_MODER		0x40020C00UL;
-#define		GPIOs_ODR		0x40020C14UL;
-#define		GPIOD_ON		1UL;
+
+
+/*--------------------------------------------------------*/
+/*             Definitions of the directions	  	  */
+/*                    of my registers			  */
+/*--------------------------------------------------------*/
+
+#define 	INPUT_MODE 		0UL				// Setting mode of the PORT
+#define 	OUTPUT_MODE		1UL				// Setting mode of the PORT
+#define 	ALTERNATE_MODE	2UL				// Setting mode of the PORT
+#define 	ANALOG_MODE		3UL				// Setting mode of the PORT
+#define 	TURNING_ON		1UL				// Setting OUTPUT DATA register of the GPIOs pin port
+#define		TRUNING_OFF  	0UL				// Cleaning OUTPUT DATA register of the GPIOs pin port
+#define		RCC_AHB1ENR		0x40023830UL;	// Address of the AHB1 bus registers
+#define		GPIOs_MODER		0x40020C00UL;	// Address of the GPIOs Modern MODE registers
+#define		GPIOs_ODR		0x40020C14UL;	// Address of the GPIOs output data registers 
+#define		GPIOD_ON		1UL;			// Setting RCC_AHB1 bus Port D
+
+
+
+/*--------------------------------------------------------*/
+/*		RCC AHB1 enable registers		  */
+/*--------------------------------------------------------*/
 
 typedef struct{
 
@@ -47,6 +60,12 @@ typedef struct{
 
 }RCC_AHB1ENR_t;
 
+
+
+/*--------------------------------------------------------*/
+/*		 GPIOs MODERN registers			  */
+/*--------------------------------------------------------*/
+
 typedef struct{
 	uint32_t	MODER0			:2;
 	uint32_t	MODER1			:2;
@@ -66,6 +85,11 @@ typedef struct{
 	uint32_t	MODER15			:2;
 }GPIOs_MODER_t;
 
+
+
+/*--------------------------------------------------------*/
+/*		GPIOs pin output data registers		  */
+/*--------------------------------------------------------*/
 
 typedef struct{
 	uint32_t 	pin_0			:1;
@@ -90,3 +114,4 @@ typedef struct{
 
 
 #endif /* MYLIBRARY_H_ */
+
