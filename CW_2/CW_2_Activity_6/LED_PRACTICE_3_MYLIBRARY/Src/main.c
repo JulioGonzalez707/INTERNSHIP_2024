@@ -26,19 +26,18 @@
 
 int main(void)
 {
-	RCC_AHB1ENR_t 	volatile *const p_RCCENR 	= (RCC_AHB1ENR_t*) RCC_AHB1ENR;
-	GPIOs_MODER_t 	volatile *const p_GPIODMODE = (GPIOs_MODER_t*) GPIOs_MODER;
-	GPIOs_ODR_t	 	volatile *const p_GPIODOUTC = (GPIOs_ODR_t*)   GPIOs_ODR;
+	// Defining my pointers
+	
+	RCC_AHB1ENR_t 	volatile *const p_RCCENR 	= (RCC_AHB1ENR_t*) RCC_AHB1ENR; 	// Pointer saving the direction of the registers of my RCC_AHB1 bus
+	GPIOs_MODER_t 	volatile *const p_GPIODMODE = (GPIOs_MODER_t*) GPIOs_MODER;		// Pointer saving the direction of the registers of the GPIOs mode configuration
+	GPIOs_ODR_t	 	volatile *const p_GPIODOUTC = (GPIOs_ODR_t*)   GPIOs_ODR;	// Pointer saving the direction of the registers of the  GPIOs out data configuration
 
-	p_RCCENR 	->	GPIODEN = GPIOD_ON;
-	p_GPIODMODE -> 	MODER12 = OUTPUT_MODE;
-	p_GPIODOUTC -> 	pin_12 	= TURNING_ON;
-
-
-
-
-
-
+	
+	// Setting PORT D registers
+	
+	p_RCCENR 	->	GPIODEN = GPIOD_ON;		// Setting the RCC of GPIO port D
+	p_GPIODMODE -> 	MODER12 = OUTPUT_MODE;			// Setting the GPIO mode of moder #12 of the port D
+	p_GPIODOUTC -> 	pin_12 	= TURNING_ON;			// Setting the output data of the pin 12 of the port D 
 
     /* Loop forever */
 	for(;;);
