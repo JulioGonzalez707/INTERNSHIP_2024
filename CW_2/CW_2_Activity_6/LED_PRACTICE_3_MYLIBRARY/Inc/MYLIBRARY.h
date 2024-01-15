@@ -17,14 +17,14 @@
 
 #define 	INPUT_MODE 		0UL				// Setting mode of the PORT
 #define 	OUTPUT_MODE		1UL				// Setting mode of the PORT
-#define 	ALTERNATE_MODE	2UL				// Setting mode of the PORT
+#define 	ALTERNATE_MODE	2UL					// Setting mode of the PORT
 #define 	ANALOG_MODE		3UL				// Setting mode of the PORT
 #define 	TURNING_ON		1UL				// Setting OUTPUT DATA register of the GPIOs pin port
-#define		TRUNING_OFF  	0UL				// Cleaning OUTPUT DATA register of the GPIOs pin port
-#define		RCC_AHB1ENR		0x40023830UL;	// Address of the AHB1 bus registers
-#define		GPIOs_MODER		0x40020C00UL;	// Address of the GPIOs Modern MODE registers
-#define		GPIOs_ODR		0x40020C14UL;	// Address of the GPIOs output data registers 
-#define		GPIOD_ON		1UL;			// Setting RCC_AHB1 bus Port D
+#define		TRUNING_OFF  	0UL					// Cleaning OUTPUT DATA register of the GPIOs pin port
+#define		RCC_AHB1ENR		0x40023830UL;			// Address of the AHB1 bus registers
+#define		GPIOs_MODER		0x40020C00UL;			// Address of the GPIOs Modern MODE registers
+#define		GPIOs_ODR		0x40020C14UL;			// Address of the GPIOs output data registers 
+#define		GPIOD_ON		1UL;				// Setting RCC_AHB1 bus Port D
 
 
 
